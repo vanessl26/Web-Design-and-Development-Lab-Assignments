@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var random = Math.floor(Math.random() * 100 + 0);
+        var guess;
+        var end_game = false;
+
+        game();
+
+        function game() {
+            mulaigame();
+            setTimeout(function () {
+                repeat();
+            }, 100)
+        }
+
+        function mulaigame() {
+            window.alert("Mari bermain tebak Angka");
+        }
+
+        function tebakangka() {
+            guess = prompt("Tebak angka antara 0 - 100");
+        }
+
+        function repeat() {
+            tebakangka();
+            if (guess > random) {
+                document.write(guess + " terlalu besar <br>");
+                window.alert(guess + " terlalu besar");
+            } else if (guess < random) {
+                document.write(guess + " terlalu kecil <br>");
+                window.alert(guess + " terlalu kecil");
+            } else {
+                document.write("PAS BANGET Tebakan kamu " + guess + "<br>");
+                window.alert("PAS BANGET Tebakan kamu " + guess);
+                end_game = true;
+            }
+
+            if (end_game == false) {
+                setTimeout(function () {
+                    repeat();
+                }, 100);
+            } else {
+                if (confirm("Main lagi?")) {
+                    game();
+                    end_game = false;
+                } else {
+
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Chatbox</title>
+</head>
+
+<body>
+    <div id="bungkus">
+        <h1>Chat Board</h1>
+        <br>
+        <div>Nama :</div>
+        <input type="text" placeholder="Nama" value="" id="nama" />
+        <div>Chat :</div>
+        <input type="text" placeholder="Chat" value="" id="teks" />
+        <br>
+        <button>SEND</button>
+    </div>
+    <div id="chat"></div>
+    <button>CLEAR</button>
+
+    <script>
+        target = document.getElementsByTagName("button")[0];
+        target.addEventListener("click", produksiAnak);
+
+        hapus = document.getElementsByTagName("button")[1];
+        hapus.addEventListener("click", hapusAnak);
+
+        function produksiAnak() {
+            const txt = [];
+            for (i = 0; i < 2; i++) {
+                anakDiv = document.createElement("div");
+                input = document.getElementsByTagName("input")[i];
+                txt[i] = input.value;
+                anakTxt = document.createTextNode(txt[i]);
+                anakDiv.appendChild(anakTxt);
+                rumah = document.getElementById("chat");
+                rumah.appendChild(anakDiv);
+                input.value = "";
+            }
+        }
+
+        function hapusAnak() {
+            ortu = document.getElementById("chat");
+            jmlAnak = ortu.childNodes.length;
+            for (i = 0; i <= jmlAnak; i++) {
+                ortu.removeChild(ortu.childNodes[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>

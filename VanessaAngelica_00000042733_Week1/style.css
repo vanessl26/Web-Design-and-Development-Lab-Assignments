@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: arial;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+#bungkus {
+    width: 960px;
+    margin: 25px auto 0;
+    overflow: hidden;
+}
+
+#logo {
+    float: left;
+}
+
+#logo img {
+    height: 50px;
+}
+
+nav {
+    float: right;
+    margin-top: 20px;
+}
+
+nav ul {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav ul li {
+    float: right;
+    list-style: none;
+    margin-left: 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    text-decoration: none;
+    padding-top: 15px;
+    color: #ed1a23;
+    font-weight: bold;
+}
+
+nav ul li:hover {
+    background-color: lightcyan;
+    padding: 3px 0;
+    border-bottom: 3px solid blue;
+}
+
+#jasa {
+    background: #eeeeee;
+    padding: 38px 0;
+}
+
+#jasa .box {
+    width: 240px;
+    display: inline-block;
+    margin: 0 38px;
+}
+
+.box .title {
+    text-align: center;
+}
+
+img.kiri {
+    float: left;
+    margin-right: 16px;
+}
+
+#saya h1 {
+    margin: 15px 0;
+}
+
+#saya .konten p {
+    margin: 15px;
+}
+
+footer {
+    clear: both;
+    border-top: 1px solid #666666;
+    padding: 25px;
+    text-align: center;
+}

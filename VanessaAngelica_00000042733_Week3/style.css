@@ -1,0 +1,196 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* 
+body {
+    margin: 0 auto;
+    font-family: arial;
+    font-size: 15px;
+    line-height: 18px;
+    margin-top: -30px;
+} */
+
+#bungkus {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#logo {
+    margin: 2vh 0;
+}
+
+#logo img {
+    height: 15vh;
+}
+
+nav {
+    float: left;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: #333;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 2vw;
+}
+
+nav ul li a {
+    display: block;
+    color: #eee;
+    text-align: center;
+    padding: 3vh 2vw;
+    margin-left: 1vw;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: rgb(77, 73, 73);
+    color: lightblue;
+    padding: 2vh 2vw;
+    transition: 0.5s;
+}
+
+.menu-categories ul {
+    list-style-type: circle;
+    margin-left: 8%;
+}
+
+.Banner {
+    text-align: center;
+    margin: 5vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.Main-content {
+    padding-right: 6vw;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content-1 p,
+.content-2 p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+    margin: 2vh 0;
+    text-align: justify;
+}
+
+.img-content {
+    width: 40vw;
+}
+
+input[type=text] {
+    padding: 5%;
+    margin-top: 1vh;
+    font-size: 0.7rem;
+    border: none;
+    width: 80%;
+    background: #d9d9d9;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.search-container button {
+    width: 20%;
+    padding: 5%;
+    margin-top: 1vh;
+    font-size: 0.7rem;
+    float: right;
+    background: #d9d9d9;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background: #eee;
+    transition: 0.7s;
+}
+
+.tags-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tags-content p {
+    width: fit-content;
+    margin-top: 1.5vh;
+    padding: 0.5vw;
+    border: 2px solid #d9d9d9;
+    border-radius: 0.3rem;
+    background: #d9d9d9;
+}
+
+.item5 button {
+    padding: 1.7vh 1.7vw;
+    border-radius: 0.3rem;
+    background: #333;
+    color: #eee;
+    cursor: pointer;
+}
+
+.item5 button:hover {
+    background-color: rgb(77, 73, 73);
+    color: lightblue;
+    padding: 2vh 2vw;
+    transition: 0.5s;
+}
+
+footer {
+    background: #333;
+    width: 100%;
+    height: 10vh;
+    padding-left: 30vw;
+}
+
+.foot1 {
+    color: #eee;
+    font-size: 1rem;
+    line-height: 10vh;
+    display: inline-block;
+}
+
+.item0 {
+    grid-area: logo;
+}
+
+.item1 {
+    grid-area: header;
+}
+
+.item2 {
+    grid-area: banner;
+}
+
+.item3 {
+    grid-area: menu;
+}
+
+.item4 {
+    grid-area: main;
+}
+
+.item5 {
+    grid-area: listpage;
+}
+
+
+.grid-container {
+    justify-content: center;
+    display: grid;
+    grid-template-areas:
+        'logo logo'
+        'header header'
+        'banner banner'
+        'main menu'
+        'listpage listpage';
+}
