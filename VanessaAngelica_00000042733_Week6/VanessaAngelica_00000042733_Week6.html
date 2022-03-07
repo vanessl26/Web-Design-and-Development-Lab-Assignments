@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum Minggu 6</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 90%;
+            margin: 3vh auto;
+        }
+
+        h1 {
+            margin-bottom: 2vh;
+        }
+
+        .content {
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: lightgrey;
+        }
+
+        .content p,
+        .send {
+            padding: 1%;
+        }
+
+        .content input,
+        .content textarea {
+            width: 98%;
+            margin: 0 1%;
+            padding: 0.5vw;
+        }
+
+        .content textarea {
+            height: 12vh;
+        }
+
+        .send button,
+        .clear button {
+            padding: 0 0.2rem;
+        }
+
+        #chatfill {
+            font-family: Arial, Helvetica, sans-serif;
+            border: 1px dotted black;
+            padding: 1px;
+        }
+
+        .clear {
+            margin-top: 1vh;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Chat Board</h1>
+    <div class="content">
+        <div class="nama">
+            <p>Nama : </p>
+            <input type="text" value="" id="nama">
+        </div>
+        <div class="chat">
+            <p>Chat : </p>
+            <textarea type="text" id="chat"></textarea>
+        </div>
+        <div class="send">
+            <button id="clickSend" type="submit">SEND</button>
+        </div>
+    </div>
+    <p id="result"></p>
+    <div class="clear">
+        <button id="clickClear" type="submit">CLEAR!</button>
+    </div>
+</body>
+
+</html>
+<script>
+    document.getElementById("clickSend").addEventListener("click", send);
+    document.getElementById("clickClear").addEventListener("click", clearChat);
+
+    function send() {
+        var nama = document.getElementById("nama").value;
+        var isiChat = document.getElementById("chat").value;
+
+        var newElement = document.createElement("p");
+        newElement.id = "content"
+
+        if (nama == "" || isiChat == "") {
+            alert("Please Complete the Chat Form");
+        } else {
+            newElement.innerHTML = "<u><b>" + nama + "</u></b>" + "<br>" + isiChat;
+            document.getElementById("result").appendChild(newElement);
+            document.getElementById("nama").value = "";
+            document.getElementById("chat").value = "";
+        }
+    }
+
+    function clearChat() {
+        var content = document.getElementById("result");
+        content.remove();
+    }
+</script>

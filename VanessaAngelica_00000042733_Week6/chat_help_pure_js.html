@@ -1,53 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
 <head>
-    <title>Chatbox</title>
+	<title>DOM - Document Object Model</title>
 </head>
-
 <body>
-    <div id="bungkus">
-        <h1>Chat Board</h1>
-        <br>
-        <div>Nama :</div>
-        <input type="text" placeholder="Nama" value="" id="nama" />
-        <div>Chat :</div>
-        <input type="text" placeholder="Chat" value="" id="teks" />
-        <br>
-        <button>SEND</button>
-    </div>
-    <div id="chat"></div>
-    <button>CLEAR</button>
 
-    <script>
-        target = document.getElementsByTagName("button")[0];
-        target.addEventListener("click", produksiAnak);
+<div id="rumah">
+	<div>Anak sulung</div>
+</div>
 
-        hapus = document.getElementsByTagName("button")[1];
-        hapus.addEventListener("click", hapusAnak);
+<input type="text" value="" />
+<button>Buat anak</button>
 
-        function produksiAnak() {
-            const txt = [];
-            for (i = 0; i < 2; i++) {
-                anakDiv = document.createElement("div");
-                input = document.getElementsByTagName("input")[i];
-                txt[i] = input.value;
-                anakTxt = document.createTextNode(txt[i]);
-                anakDiv.appendChild(anakTxt);
-                rumah = document.getElementById("chat");
-                rumah.appendChild(anakDiv);
-                input.value = "";
-            }
-        }
+<script>
 
-        function hapusAnak() {
-            ortu = document.getElementById("chat");
-            jmlAnak = ortu.childNodes.length;
-            for (i = 0; i <= jmlAnak; i++) {
-                ortu.removeChild(ortu.childNodes[0]);
-            }
-        }
-    </script>
+target = document.getElementsByTagName("button")[0];
+input = document.getElementsByTagName("input")[0];
+target.addEventListener("click", produksiAnak);
+input.addEventListener("keydown", enter);
+
+function enter(wkwk){
+	if(wkwk.keyCode == 13) produksiAnak();
+}
+
+function produksiAnak(){
+	anakDiv = document.createElement("div");
+	input = document.getElementsByTagName("input")[0];
+	txt = input.value;
+	anakTxt = document.createTextNode(txt);
+	anakDiv.appendChild(anakTxt);
+	rumah = document.getElementById("rumah");
+	rumah.appendChild(anakDiv);
+	input.value = "";
+}
+
+</script>
+
 </body>
-
 </html>
