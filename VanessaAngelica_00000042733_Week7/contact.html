@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Vanessa Angelica - 00000042733</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="py-3 bg-secondary">
+        <div class="text-center text-black">
+            <H1>KONTAK AKU DONG !</H1>
+        </div>
+    </div>
+    <header class=" d-flex justify-content-center py-3" style="background-color: black;">
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="index.html" class="nav-link">BIO</a></li>
+            <li class="nav-item"><a href="alamat.html" class="nav-link">ALAMAT</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">CONTACT</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <form class="card" style="margin: 5vh 0;">
+            <div class="mb-3" style="margin: 1vw;">
+                <label for="namaPengirim" class="form-label">Nama Pengirim</label>
+                <input type="text" class="form-control" id="inputNama" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3" style="margin: 0 1vw;">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3" style="margin: 0 1vw;">
+                <label for="exampleFormControlTextarea1" class="form-label">Pesan</label>
+                <textarea class="form-control" id="inputChat" rows="3"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary" id="submitButton" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                Send
+            </button>
+        </form>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle" val=""></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalChat">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <div id="modalEmail">
+                        ...
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer py-5 bg-secondary">
+        <div class="text-center text-black">
+            <p>~ copyright : Vanessa Angelica - Lab FTI Universitas Multimedia Nusantara ~</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="js/bootstrap.bundle.min.js">
+    </script>
+</body>
+
+<script>
+    function kontak() {
+        inputNama = $("#inputNama").val();
+        inputEmail = $("#inputEmail").val();
+        inputChat = $("#inputChat").val();
+        $("#modalTitle").html(inputNama);
+        $("#modalChat").html(inputChat);
+        $("#modalEmail").html("Pengirim Pesan : " + inputEmail);
+    }
+
+    $("#submitButton").click(function () {
+        kontak();
+    });
+</script>
+
+</html>
